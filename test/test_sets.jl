@@ -15,7 +15,7 @@ LogLevel(Logging.Info)
     LogLevel(Logging.Info)
 
     # Load and parse the configuration
-    conf = ConfParse("../data/config/config.ini")
+    conf = ConfParse("../src/config/config.ini")
     parse_conf!(conf)
 
     # Load some parameters and check their contents and types
@@ -31,7 +31,7 @@ end
 # Test that the parameter struct loads correctly
 @testset "Params" begin
     # Load and parse the configuration
-    conf = ConfParse("../data/config/config.ini")
+    conf = ConfParse("../src/config/config.ini")
     parse_conf!(conf)
 
     # Include the parameters file
@@ -46,7 +46,7 @@ end
 # Test that the module loads correctly
 @testset "Module" begin
     # Load and parse the configuration
-    conf = ConfParse("../data/config/config.ini")
+    conf = ConfParse("../src/config/config.ini")
     parse_conf!(conf)
 
     tdm = TaskDetectorModule(conf)

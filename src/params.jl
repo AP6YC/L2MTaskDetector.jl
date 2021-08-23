@@ -82,8 +82,9 @@ function TaskDetectorParameters(config::ConfParse)
     sigmoid_scaling = parse(Float64, get_param(config, "params", "sigmoid_scaling"))
 
     # Load the mean and scale local configs
-    mean = vec(readdlm(joinpath("../", mean_file), ',', Float64, '\n'))
-    scale = vec(readdlm(joinpath("../", scale_file), ',', Float64, '\n'))
+    local_path = @__DIR__
+    mean = vec(readdlm(joinpath(local_path, mean_file), ',', Float64, '\n'))
+    scale = vec(readdlm(joinpath(local_path, scale_file), ',', Float64, '\n'))
 
     # Construct the transformer from the mean and scale parameters
     transformer = ZScoreTransform(windows * feat_dim, 2, mean, scale)

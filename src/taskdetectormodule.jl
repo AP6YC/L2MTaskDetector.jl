@@ -30,6 +30,10 @@ mutable struct TaskDetectorModule
     stats::Dict
 end # TaskDetectorModule
 
+function TaskDetectorModule()
+    return TaskDetectorModule("config/config.ini")
+end
+
 """
     TaskDetectorModule(conf::ConfParse)
 
