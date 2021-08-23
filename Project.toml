@@ -6,7 +6,9 @@ version = "0.1.0"
 [deps]
 AdaptiveResonance = "3d72adc0-63d3-4141-bf9b-84450dd0395b"
 ClusterValidityIndices = "2fefd308-f647-4698-a2f0-e90cfcbca9ad"
+ConfParser = "88353bc9-fd38-507d-a820-d3b43837d6b9"
 DelimitedFiles = "8bb1440f-4735-579b-a4ab-409b98df4dab"
+DrWatson = "634d3b9d-ee7a-5ddf-bec9-22491ea816e1"
 Logging = "56ddb016-857b-54e1-b83d-db4d58db5568"
 StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
 
