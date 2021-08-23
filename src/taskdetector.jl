@@ -1,3 +1,9 @@
+using AdaptiveResonance
+
+include("params.jl")
+include("preprocess.jl")
+include("metrics.jl")
+
 """
     TaskDetectorModule
 
@@ -25,14 +31,14 @@ mutable struct TaskDetectorModule
 end # TaskDetectorModule
 
 """
-    TaskDetectorModule(conf::Config.conf)
+    TaskDetectorModule(conf::ConfParse)
 
 Default constructor for the C3 stateful information, requires an L2M config.
 
 # Arguments
-- `conf::Config.conf`: the L2M config object for the task detector.
+- `conf::ConfParse`: the L2M config object for the task detector.
 """
-function TaskDetectorModule(conf::Config.Conf)
+function TaskDetectorModule(conf::ConfParse)
     # Get the algorithmic parameters
     params = TaskDetectorParameters(conf)
 

@@ -21,8 +21,11 @@ LogLevel(Logging.Info)
     # Load some parameters and check their contents and types
     mean_file = retrieve(conf, "params", "mean_file")
     @info "Mean file" mean_file typeof(mean_file)
+    @test typeof(mean_file) == String
+
     windows = parse(Int, retrieve(conf, "params", "windows"))
     @info "Windows" windows typeof(windows)
+    @test typeof(windows) <: Int
 end
 
 # Test that the parameter struct loads correctly
@@ -36,4 +39,15 @@ end
 
     # Load the parameters struct
     params = TaskDetectorParameters(conf)
+
+    # @info "Params" params
+end
+
+# Test that the module loads correctly
+@testset "Module" begin
+    # Load and parse the configuration
+    conf = ConfParse("../data/config/config.ini")
+    parse_conf!(conf)
+
+    tdm = TaskDetectorModule(conf)
 end
