@@ -15,10 +15,9 @@ using StatsBase
 using ConfParser
 using AdaptiveResonance
 using DelimitedFiles
-using DrWatson
+# using DrWatson
 
 function get_param(config::ConfParse, block::String, key::String)
-    # haskey(s::ConfParse, block::String, key::String)
     if haskey(config, block, key)
         return retrieve(config, block, key)
     else
@@ -83,8 +82,8 @@ function TaskDetectorParameters(config::ConfParse)
     sigmoid_scaling = parse(Float64, get_param(config, "params", "sigmoid_scaling"))
 
     # Load the mean and scale local configs
-    mean = vec(readdlm(projectdir(mean_file), ',', Float64, '\n'))
-    scale = vec(readdlm(projectdir(scale_file), ',', Float64, '\n'))
+    mean = vec(readdlm(joinpath("../", mean_file), ',', Float64, '\n'))
+    scale = vec(readdlm(joinpath("../", scale_file), ',', Float64, '\n'))
 
     # Construct the transformer from the mean and scale parameters
     transformer = ZScoreTransform(windows * feat_dim, 2, mean, scale)
