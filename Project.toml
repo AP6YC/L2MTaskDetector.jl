@@ -1,0 +1,4 @@
+name = "L2MTaskDetector"
+uuid = "113503e3-f883-4c9a-a9b6-ff4bcf2203ef"
+authors = ["Sasha Petrenko <sap625@umsystem.edu>"]
+version = "0.1.0"
