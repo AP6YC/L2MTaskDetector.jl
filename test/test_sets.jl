@@ -9,6 +9,7 @@ using Logging
 # Set the log level
 LogLevel(Logging.Info)
 
+# Test that the configuration files load correctly
 @testset "Config" begin
     # Set the logging level to Info and standardize the random seed
     LogLevel(Logging.Info)
@@ -24,18 +25,15 @@ LogLevel(Logging.Info)
     @info "Windows" windows typeof(windows)
 end
 
+# Test that the parameter struct loads correctly
 @testset "Params" begin
-
     # Load and parse the configuration
-    # conf = ConfParse(projectdir("data","config","config.ini"))
     conf = ConfParse("../data/config/config.ini")
     parse_conf!(conf)
 
     # Include the parameters file
-    # include(projectdir("julia", "taskdetector", "params.jl"))
     include("../src/params.jl")
 
     # Load the parameters struct
     params = TaskDetectorParameters(conf)
-
 end
