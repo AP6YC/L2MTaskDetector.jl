@@ -20,4 +20,5 @@ makedocs(;
 
 deploydocs(;
     repo="github.com/AP6YC/L2MTaskDetector.jl",
+    devbranch = "main",
 )
