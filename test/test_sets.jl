@@ -14,7 +14,6 @@ LogLevel(Logging.Info)
     LogLevel(Logging.Info)
 
     # Load and parse the configuration
-    # conf = ConfParse(projectdir("data","config","config.ini"))
     conf = ConfParse("../data/config/config.ini")
     parse_conf!(conf)
 
