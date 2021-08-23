@@ -6,3 +6,8 @@ Missouri S&amp;T's TaskDetector module, developed for the DARPA L2M project unde
 [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://AP6YC.github.io/L2MTaskDetector.jl/dev)
 [![Build Status](https://github.com/AP6YC/L2MTaskDetector.jl/workflows/CI/badge.svg)](https://github.com/AP6YC/L2MTaskDetector.jl/actions)
 [![Coverage](https://codecov.io/gh/AP6YC/L2MTaskDetector.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/AP6YC/L2MTaskDetector.jl)
+
+## Table of Contents
+
+- [L2MTaskDetector](#l2mtaskdetector)
+  - [Table of Contents](#table-of-contents)
