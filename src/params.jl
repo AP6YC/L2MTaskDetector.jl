@@ -15,7 +15,6 @@ using StatsBase
 using ConfParser
 using AdaptiveResonance
 using DelimitedFiles
-# using DrWatson
 
 function get_param(config::ConfParse, block::String, key::String)
     if haskey(config, block, key)
