@@ -52,4 +52,5 @@ Please raise an [issue][issues-url].
 
 ## License
 
-This software is owned by the ACIL laboratory of the Missouri University of Science and Technology. Read the [License](LICENSE).
+This software is developed by the Applied Computational Intelligence Laboratory (ACIL) of the Missouri University of Science and Technology (S&amp;T) under the supervision of Teledyne Technologies for the DARPA L2M program.
+Read the [License](LICENSE).
