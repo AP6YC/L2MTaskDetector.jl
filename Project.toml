@@ -5,18 +5,20 @@ version = "0.1.0"
 
 [deps]
 AdaptiveResonance = "3d72adc0-63d3-4141-bf9b-84450dd0395b"
+ClusterValidityIndices = "2fefd308-f647-4698-a2f0-e90cfcbca9ad"
 ConfParser = "88353bc9-fd38-507d-a820-d3b43837d6b9"
 DelimitedFiles = "8bb1440f-4735-579b-a4ab-409b98df4dab"
 Logging = "56ddb016-857b-54e1-b83d-db4d58db5568"
 MetaICVI = "778c5047-3e82-4d04-81b5-6fafe2d2d704"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
 Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
 StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
 
 [compat]
+AdaptiveResonance = "0.3"
 ConfParser = "0.1"
 StatsBase = "0.33"
-ClusterValidityIndices = "0.2"
-AdaptiveResonance = "0.3"
 julia = "1"
 
 [extras]

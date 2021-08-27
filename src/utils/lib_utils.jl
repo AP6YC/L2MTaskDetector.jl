@@ -213,34 +213,34 @@ function yolo_normalize(x::Real)
     return (x + 0.2) / 2.0
 end #
 
-"""
-    sigmoid(x::Real)
+# """
+#     sigmoid(x::Real)
 
-Return the sigmoid function on x.
-"""
-function sigmoid(x::Real)
-    # return 1.0 / (1.0 + exp(-x))
-    return one(x) / (one(x) + exp(-x))
-end
+# Return the sigmoid function on x.
+# """
+# function sigmoid(x::Real)
+#     # return 1.0 / (1.0 + exp(-x))
+#     return one(x) / (one(x) + exp(-x))
+# end
 
-"""
-    feature_preprocess!(data_split::DataSplit)
-"""
-function feature_preprocess!(data_split::DataSplit)
-    # Standardize
-    dt_train = fit(ZScoreTransform, data_split.train_x, dims=2)
-    dt_test = fit(ZScoreTransform, data_split.test_x, dims=2)
-    data_split.train_x = StatsBase.transform(dt_train, data_split.train_x)
-    data_split.test_x = StatsBase.transform(dt_test, data_split.test_x)
+# """
+#     feature_preprocess!(data_split::DataSplit)
+# """
+# function feature_preprocess!(data_split::DataSplit)
+#     # Standardize
+#     dt_train = fit(ZScoreTransform, data_split.train_x, dims=2)
+#     dt_test = fit(ZScoreTransform, data_split.test_x, dims=2)
+#     data_split.train_x = StatsBase.transform(dt_train, data_split.train_x)
+#     data_split.test_x = StatsBase.transform(dt_test, data_split.test_x)
 
-    # Normalize the data according to typical yolo activation ranges (-0.2 - 0.8)
-    # data_split.train_x = yolo_normalize.(data_split.train_x)
-    # data_split.test_x = yolo_normalize.(data_split.test_x)
+#     # Normalize the data according to typical yolo activation ranges (-0.2 - 0.8)
+#     # data_split.train_x = yolo_normalize.(data_split.train_x)
+#     # data_split.test_x = yolo_normalize.(data_split.test_x)
 
-    # Squash the data sigmoidally in case of outliers
-    data_split.train_x = sigmoid.(data_split.train_x)
-    data_split.test_x = sigmoid.(data_split.test_x)
-end
+#     # Squash the data sigmoidally in case of outliers
+#     data_split.train_x = sigmoid.(data_split.train_x)
+#     data_split.test_x = sigmoid.(data_split.test_x)
+# end
 
 function load_sim_data(data_dirs, cell, use_alt)
 
