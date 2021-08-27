@@ -1,18 +1,11 @@
 using Revise
-# using AdaptiveResonance
 using DelimitedFiles
 using Logging
-using Random
-# using Statistics
 using StatsBase
 
 # Set the log level
 LogLevel(Logging.Info)
 
-Random.seed!(0)
-
-include("../../lib_sim.jl")
-# include("julia/lib_post.jl")
 # Read all the paths as subdirs from this datadrop
 # data_dirs = readdir("E:\\dev\\mount\\data\\average_activations", join=true)
 # data_dirs = readdir("work/data/average_activations", join=true)
