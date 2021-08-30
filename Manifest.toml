@@ -119,8 +119,10 @@ deps = ["Artifacts", "Libdl"]
 uuid = "c8ffd9c3-330d-5841-b78e-0817d7145fa1"
 
 [[MetaICVI]]
-deps = ["ClusterValidityIndices", "Logging", "StatsBase"]
-path = "C:\\Users\\Sasha\\.julia\\dev\\MetaICVI"
+deps = ["ClusterValidityIndices", "Logging", "Parameters", "Random", "StatsBase"]
+git-tree-sha1 = "8842a85605a367ca4055bd5420623b3bcc248f8d"
+repo-rev = "main"
+repo-url = "https://github.com/AP6YC/MetaICVI.jl"
 uuid = "778c5047-3e82-4d04-81b5-6fafe2d2d704"
 version = "0.1.0"
 
