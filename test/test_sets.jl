@@ -5,15 +5,30 @@ using DelimitedFiles
 
 using ConfParser
 using Logging
+using Random
 
 # Set the log level
 LogLevel(Logging.Info)
 
+@testset "Preprocess" begin
+    include("../src/preprocess.jl")
+    using .YOLOPreprocess
+
+    params = YOLOPreprocessParameters()
+
+    random_3d = rand(28, 28, 128)
+    preprocessed = feature_preprocess(random_3d, params)
+
+    params_2 = YOLOPreprocessParameters(
+        mean_file="config/mean/2.csv",
+        scale_file="config/scale/2.csv",
+        windows=2
+    )
+    preprocessed = feature_preprocess(random_3d, params_2)
+end
+
 # Test that the configuration files load correctly
 @testset "Config" begin
-    # Set the logging level to Info and standardize the random seed
-    LogLevel(Logging.Info)
-
     # Load and parse the configuration
     conf = ConfParse("../src/config/config.ini")
     parse_conf!(conf)
