@@ -2,9 +2,13 @@
     preprocess.jl
 
 Description:
-    Defines module `YOLOPreprocess`.
+    Defines module `YOLOPreprocess`, exporting `YOLOPreprocessParameters` and `feature_preprocess(...)`.
 
-    Preprocessing toolchain for the YOLOv3 features coming into C3.
+    Preprocessing toolchain for the YOLOv3 features coming into C3 (TaskDetector).
+
+Usage:
+    1. Instantiate a YOLOPreprocessParameters with keywords.
+    2. Pass the parameters and features to process through feature_preprocess(features, params).
 
 Authors:
     - Sasha Petrenko <sap625@mst.edu> <sap625@umsystem.edu>
@@ -57,7 +61,7 @@ mutable struct YOLOPreprocessParameters
 end
 
 """
-    YOLOPreprocessParameters(mean_file::String, scale_file::String, windows::Int, feat_dim::Int, sigmoid_scaling::Float64)
+    YOLOPreprocessParameters(;mean_file::String, scale_file::String, windows::Int, feat_dim::Int, sigmoid_scaling::Float64)
 
 # Arguments
 - `mean_file::String`: relative location of .csv containing the feature means. Default "config/mean/1.csv".
