@@ -122,4 +122,3 @@ function classify(taskmod::TaskDetectorModule, x::Array{T,1}) where {T <: Real}
     # Return the task belief without having learned
     return y_hat
 end # classify(taskmod::TaskDetectorModule, x::Array{T, 1}, timestamp::UInt64) where {T<:Real}
-
